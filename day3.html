@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <style>
+      .big {
+        width: 500px;
+        height: 600px;
+        background-color: blue;
+      }
+    </style>
+
+    <!-- confetti CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+
+    <!-- jQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <h1 class="container"></h1>
+    <button class="test">클릭</button>
+  </body>
+
+  <script>
+    const testButton = document.querySelector(".test");
+    const container = document.querySelector(".container");
+
+    // testButton 클릭시 발생되는 함수
+    testButton.addEventListener("click", function () {
+      const answer = prompt("무엇을 그려볼까요????");
+
+      container.textContent = answer;
+
+      // 클래스 추가
+      container.classList.add("big");
+    });
+
+    // JSConfetti 동작 코드
+    const jsConfetti = new JSConfetti();
+
+    jsConfetti.addConfetti({
+      confettiRadius: 6,
+      confettiNumber: 500,
+    });
+  </script>
+</html>
